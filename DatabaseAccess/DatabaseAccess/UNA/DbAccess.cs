@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +16,50 @@ namespace DatabaseAccess.UNA
             get;
             set;
         }
-        public abstract Transaction DbTransaction
+        public abstract DbTransaction Transaction 
+        {
+            get;
+            set;
+        }
+        public abstract DbConnection Connection 
+        {
+            get;
+            set;
+        }
+
+        public void OpenConnection()
         {
 
         }
+        public void CloseConnection()
+        {
+
+        }
+    
+        public long EjectSQL(String var)
+        {
+            return 0;
+        }
+        public DataTable QuerySQL(string var)
+        {
+            return null;
+        }
+        public bool IsTransaction()
+        {
+            return true;
+        }
+        public void CommitTransaction()
+        {
+
+        }
+        public void RollBackTransaction()
+        {
+
+        }
+        public void BeginTransaction()
+        {
+
+        }
+
     }
 }
