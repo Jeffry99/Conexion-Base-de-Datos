@@ -9,57 +9,32 @@ using System.Transactions;
 
 namespace DatabaseAccess.UNA
 {
-    abstract class DbAccess
+    public abstract class DbAccess
     {
-        public abstract string ConnectionString
+        public   string ConnectionString
         {
             get;
             set;
         }
-        public abstract DbTransaction Transaction 
+        public  DbTransaction Transaction 
         {
             get;
             set;
         }
-        public abstract DbConnection Connection 
+        public  DbConnection Connection 
         {
             get;
             set;
         }
 
-        public void OpenConnection()
-        {
-
-        }
-        public void CloseConnection()
-        {
-
-        }
-    
-        public long EjectSQL(String var)
-        {
-            return 0;
-        }
-        public DataTable QuerySQL(string var)
-        {
-            return null;
-        }
-        public bool IsTransaction()
-        {
-            return true;
-        }
-        public void CommitTransaction()
-        {
-
-        }
-        public void RollBackTransaction()
-        {
-
-        }
-        public void BeginTransaction()
-        {
-
-        }
+        public abstract void OpenConnection();
+        public abstract void CloseConnection();
+        public abstract long EjectSQL(String var);
+        public abstract DataTable QuerySQL(string var);
+        public abstract bool IsTransaction();
+        public abstract void CommitTransaction();
+        public abstract void RollBackTransaction();
+        public abstract void BeginTransaction();
 
     }
 }
